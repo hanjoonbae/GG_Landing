@@ -1,0 +1,22 @@
+version: 1
+applications:
+  - appRoot: gg-landing
+    env:
+      variables:
+        AMPLIFY_MONOREPO_APP_ROOT: gg-landing
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - node_modules/**/*
+          - .next/cache/**/*
