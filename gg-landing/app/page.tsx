@@ -727,8 +727,8 @@ export default function Home() {
             ) : null}
             {submitState === "saved-local" ? (
               <p className="mt-4 rounded-lg bg-[#FFF5E8] p-4 text-sm font-semibold text-[#8A4F12]">
-                Google Sheets 연동 URL이 아직 없어 브라우저에 임시 저장했습니다.
-                연동 후 다시 제출하면 됩니다.
+                Supabase 환경변수가 아직 배포 환경에 없어 브라우저에 임시 저장했습니다.
+                Amplify 환경변수 설정 후 다시 제출하면 됩니다.
               </p>
             ) : null}
             {submitState === "error" ? (
