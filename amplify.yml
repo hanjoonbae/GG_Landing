@@ -11,6 +11,7 @@ applications:
             - npm ci
         build:
           commands:
+            - if [ -d gg-landing ]; then env | grep -e '^SUPABASE_URL=' -e '^SUPABASE_SECRET_KEY=' >> gg-landing/.env.production; else env | grep -e '^SUPABASE_URL=' -e '^SUPABASE_SECRET_KEY=' >> .env.production; fi
             - npm run build
       artifacts:
         baseDirectory: .next
